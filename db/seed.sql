@@ -59,7 +59,4 @@ INSERT INTO links (sneaker_ID, store_name, url) VALUES
 
 INSERT INTO reviews (sneaker_ID, reviewer, title, content, rating) VALUES
 (1, 'Evan', 'My Favorite', 'These sneakers crush it when it comes to awesome kicks', 3),
-(2, 'Kristie', 'My Favorite', 'This crushes it when it comes to inspiring me', 3),
-(),
-(),
-();
+(2, 'Kristie', 'My Favorite', 'This crushes it when it comes to inspiring me', 3);
