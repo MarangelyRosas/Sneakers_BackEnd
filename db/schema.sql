@@ -27,4 +27,16 @@ CREATE TABLE links (
     store_name TEXT NOT NULL,
     url TEXT NOT NULL,
     sneaker_ID INTEGER NOT NULL REFERENCES sneakers (id)
+    ON DELETE CASCADE
 ); 
+
+CREATE TABLE reviews (
+    id SERIAL PRIMARY KEY,
+    reviewer TEXT NOT NULL,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL,
+    rating NUMERIC,
+    CHECK (rating >= 0 AND rating <= 5),
+    sneaker_ID INTEGER NOT NULL REFERENCES sneakers (id)
+    ON DELETE CASCADE
+);
