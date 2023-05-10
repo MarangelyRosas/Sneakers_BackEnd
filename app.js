@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
     res.send("Welcome to the most amazing Sneakers App");
   });
 
-app.use("/sneakers", sneakersControllers);
+app.use("/sneakers", sneakersController);
 
 app.get("*", (req, res) => {
     res.status(404).send("Page not found");
