@@ -7,7 +7,7 @@ CREATE TABLE sneakers (
    id SERIAL PRIMARY KEY,
    name TEXT NOT NULL,
    brand TEXT NOT NULL, 
-   release_date DATE,
+   release_date TEXT,
    price INT, 
    rating NUMERIC,
    CHECK (rating >= 0 AND rating <= 5),
