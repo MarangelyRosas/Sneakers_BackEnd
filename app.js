@@ -15,6 +15,12 @@ app.use(express.json()); //parses incoming json request
 app.get("/", (req, res) => {
     res.send("Welcome to the most amazing Sneakers App");
   });
+
+app.use("/sneakers", sneakersControllers);
+
+app.get("*", (req, res) => {
+    res.status(404).send("Page not found");
+});
   
 
 module.exports = app;
