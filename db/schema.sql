@@ -6,29 +6,16 @@ CREATE DATABASE sneakers_dev;
 CREATE TABLE sneakers (
    id SERIAL PRIMARY KEY,
    name TEXT NOT NULL,
+   image_url TEXT NOT NULL,
    brand TEXT NOT NULL, 
    release_date TEXT,
    price INT, 
+   purchase_url TEXT,
    rating NUMERIC,
    CHECK (rating >= 0 AND rating <= 5),
    is_favorite BOOLEAN DEFAULT FALSE
 );
 
-CREATE TABLE images (
-    id SERIAL PRIMARY KEY,
-    name TEXT NOT NULL,
-    url TEXT NOT NULL,
-    sneaker_ID INTEGER NOT NULL REFERENCES sneakers (id)
-    ON DELETE CASCADE
-);
-
-CREATE TABLE links (
-    id SERIAL PRIMARY KEY,
-    store_name TEXT NOT NULL,
-    url TEXT NOT NULL,
-    sneaker_ID INTEGER NOT NULL REFERENCES sneakers (id)
-    ON DELETE CASCADE
-); 
 
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
