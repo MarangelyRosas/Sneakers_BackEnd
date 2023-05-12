@@ -40,6 +40,7 @@ sneakers.get("/:id", async (req, res) => {
 sneakers.post("/", validateSneaker, async (req, res) => {
   const { error, result } = await createSneaker(req.body);
   if (error) {
+    console.log(error);
     res.status(500).json({ error: "server error" });
   } else {
     res.status(201).json(result);
@@ -51,6 +52,7 @@ sneakers.put("/:id", validateSneaker, async (req, res) => {
   const { id } = req.params;
   const { error, result } = await updateSneaker(id, req.body);
   if (error) {
+    console.log(error);
     res.status(500).json({ error: "server error" });
   } else {
     res.status(200).json(result);

@@ -6,7 +6,7 @@ CREATE DATABASE sneakers_dev;
 CREATE TABLE sneakers (
    id SERIAL PRIMARY KEY,
    name TEXT NOT NULL,
-   image_url TEXT NOT NULL,
+   image_url TEXT,
    brand TEXT NOT NULL, 
    release_date TEXT,
    price INT, 
