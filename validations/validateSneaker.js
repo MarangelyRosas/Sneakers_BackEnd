@@ -7,6 +7,7 @@ const sneakerSchema = Joi.object({
   brand: Joi.string().required(),
   release_date: Joi.string(),
   price: Joi.number(),
+  purchase_url: Joi.string(),
   rating: Joi.number(),
   is_favorite: Joi.bool()
 });
