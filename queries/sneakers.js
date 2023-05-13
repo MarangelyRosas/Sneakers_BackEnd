@@ -22,11 +22,11 @@ const createSneaker = async (sneaker) => {
   try {
     const result = await db.one(
       `INSERT INTO
-        sneakers(name, image, release_date, rating, url)
+        sneakers(name, image_url, brand, release_date, price, purchase_url, rating, is_favorite)
        VALUES
-        ($1, $2, $3, $4, $5)
+        ($1, $2, $3, $4, $5, $6, $7, $8)
        RETURNING *;`,
-      [sneaker.name, sneaker.image, sneaker.release_date, sneaker.rating, sneaker.url]
+      [sneaker.name, sneaker.image_url, sneaker.brand, sneaker.release_date, sneaker.price, sneaker.purchase_url, sneaker.rating, sneaker.is_favorite]
     );
     return { result };
   } catch (error) {
@@ -49,8 +49,8 @@ const deleteSneaker = async (id) => {
 const updateSneaker = async (id, sneaker) => {
   try {
     const result = await db.one(
-      `UPDATE sneakers SET name=$1, image=$2, release_date=$3, rating=$4, url=$5 WHERE id=$6 RETURNING *`,
-      [sneaker.name, sneaker.image, sneaker.release_date, sneaker.rating, sneaker.url, id]
+      `UPDATE sneakers SET name=$1, image_url=$2, brand=$3, release_date=$4, price=$5, purchase_url=$6, rating=$7, is_favorite=$8  WHERE id=$9 RETURNING *`,
+      [sneaker.name, sneaker.image_url, sneaker.brand, sneaker.release_date, sneaker.price, sneaker.purchase_url, sneaker.rating, sneaker.is_favorite, id]
     );
     return { result };
   } catch (error) {
