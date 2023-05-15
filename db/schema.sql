@@ -3,7 +3,7 @@ CREATE DATABASE sneakers_dev;
 
 \c sneakers_dev;
 
-CREATE TABLE sneakers (
+CREATE TABLE sneakers ( 
    id SERIAL PRIMARY KEY,
    name TEXT NOT NULL,
    image_url TEXT,
